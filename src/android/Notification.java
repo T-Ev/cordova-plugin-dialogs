@@ -29,6 +29,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.text.util.Linkify;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
