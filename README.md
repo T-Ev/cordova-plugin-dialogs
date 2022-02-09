@@ -20,6 +20,7 @@ description: Use native dialog UI elements
 #         specific language governing permissions and limitations
 #         under the License.
 -->
+Fork of the cordova-plugin-dialog plugin. Added support for hyperlinks in dialogs. Web links are automatically made clickable.
 
 # cordova-plugin-dialogs
 
