@@ -188,7 +188,8 @@ public class Notification extends CordovaPlugin {
 
         Runnable runnable = new Runnable() {
             public void run() {
-
+                final SpannableString s = new SpannableString(msg); // msg should have url to enable clicking
+                Linkify.addLinks(s, Linkify.ALL);
                 Builder dlg = createDialog(cordova); // new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
                 dlg.setMessage(message);
                 dlg.setTitle(title);
@@ -229,6 +230,8 @@ public class Notification extends CordovaPlugin {
 
         Runnable runnable = new Runnable() {
             public void run() {
+                final SpannableString s = new SpannableString(msg); // msg should have url to enable clicking
+                Linkify.addLinks(s, Linkify.ALL);
                 Builder dlg = createDialog(cordova); // new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
                 dlg.setMessage(message);
                 dlg.setTitle(title);
@@ -311,7 +314,8 @@ public class Notification extends CordovaPlugin {
         Runnable runnable = new Runnable() {
             public void run() {
                 final EditText promptInput =  new EditText(cordova.getActivity());
-
+                final SpannableString s = new SpannableString(msg); // msg should have url to enable clicking
+                Linkify.addLinks(s, Linkify.ALL);
                 /* CB-11677 - By default, prompt input text color is set according current theme.
                 But for some android versions is not visible (for example 5.1.1).
                 android.R.color.primary_text_light will make text visible on all versions. */
@@ -560,6 +564,7 @@ public class Notification extends CordovaPlugin {
         if (currentapiVersion >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
             TextView messageview = (TextView)dialog.findViewById(android.R.id.message);
             messageview.setTextDirection(android.view.View.TEXT_DIRECTION_LOCALE);
+            messageview.setMovementMethod(LinkMovementMethod.getInstance());
         }
     }
 }
