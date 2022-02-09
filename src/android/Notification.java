@@ -31,6 +31,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.text.util.Linkify;
 import android.text.SpannableString;
+import android.text.method.LinkMovementMethod;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
