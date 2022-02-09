@@ -190,10 +190,10 @@ public class Notification extends CordovaPlugin {
 
         Runnable runnable = new Runnable() {
             public void run() {
-                final SpannableString s = new SpannableString(msg); // msg should have url to enable clicking
+                final SpannableString s = new SpannableString(message); // msg should have url to enable clicking
                 Linkify.addLinks(s, Linkify.ALL);
                 Builder dlg = createDialog(cordova); // new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
-                dlg.setMessage(message);
+                dlg.setMessage(s);
                 dlg.setTitle(title);
                 dlg.setCancelable(true);
                 dlg.setPositiveButton(buttonLabel,
@@ -232,10 +232,10 @@ public class Notification extends CordovaPlugin {
 
         Runnable runnable = new Runnable() {
             public void run() {
-                final SpannableString s = new SpannableString(msg); // msg should have url to enable clicking
+                final SpannableString s = new SpannableString(message); // msg should have url to enable clicking
                 Linkify.addLinks(s, Linkify.ALL);
                 Builder dlg = createDialog(cordova); // new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
-                dlg.setMessage(message);
+                dlg.setMessage(s);
                 dlg.setTitle(title);
                 dlg.setCancelable(true);
 
@@ -316,7 +316,7 @@ public class Notification extends CordovaPlugin {
         Runnable runnable = new Runnable() {
             public void run() {
                 final EditText promptInput =  new EditText(cordova.getActivity());
-                final SpannableString s = new SpannableString(msg); // msg should have url to enable clicking
+                final SpannableString s = new SpannableString(message); // msg should have url to enable clicking
                 Linkify.addLinks(s, Linkify.ALL);
                 /* CB-11677 - By default, prompt input text color is set according current theme.
                 But for some android versions is not visible (for example 5.1.1).
@@ -326,7 +326,7 @@ public class Notification extends CordovaPlugin {
                 promptInput.setTextColor(promptInputTextColor);
                 promptInput.setText(defaultText);
                 Builder dlg = createDialog(cordova); // new AlertDialog.Builder(cordova.getActivity(), AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
-                dlg.setMessage(message);
+                dlg.setMessage(s);
                 dlg.setTitle(title);
                 dlg.setCancelable(true);
 
